@@ -1,0 +1,114 @@
+{
+  "types": [
+    {
+      "type": "docs",
+      "keywords": [
+        "readme",
+        "documentation",
+        "docs",
+        "comment",
+        "comments"
+      ],
+      "verb": "update"
+    },
+    {
+      "type": "test",
+      "keywords": [
+        "test",
+        "tests",
+        "testing",
+        "unit test"
+      ],
+      "verb": "add"
+    },
+    {
+      "type": "fix",
+      "keywords": [
+        "fix",
+        "fixed",
+        "fixes",
+        "bug",
+        "resolve",
+        "resolved",
+        "broken",
+        "not working",
+        "error"
+      ],
+      "verb": "resolve"
+    },
+    {
+      "type": "refactor",
+      "keywords": [
+        "refactor",
+        "refactored",
+        "restructure",
+        "clean up",
+        "cleanup",
+        "rename"
+      ],
+      "verb": "refactor"
+    },
+    {
+      "type": "feat",
+      "keywords": [
+        "add",
+        "added",
+        "create",
+        "created",
+        "implement",
+        "implemented",
+        "introduce",
+        "new"
+      ],
+      "verb": "add"
+    },
+    {
+      "type": "perf",
+      "keywords": [
+        "improve",
+        "improved",
+        "optimize",
+        "optimized",
+        "faster",
+        "speed up"
+      ],
+      "verb": "improve"
+    },
+    {
+      "type": "chore",
+      "keywords": [
+        "remove",
+        "removed",
+        "delete",
+        "deleted",
+        "update",
+        "updated",
+        "upgrade",
+        "bump"
+      ],
+      "verb": "update"
+    }
+  ],
+  "leadingVerbs": [
+    "added",
+    "add",
+    "created",
+    "create",
+    "fixed",
+    "fix",
+    "updated",
+    "update",
+    "removed",
+    "remove",
+    "deleted",
+    "delete",
+    "refactored",
+    "refactor",
+    "improved",
+    "improve",
+    "implemented",
+    "implement",
+    "resolved",
+    "resolve"
+  ]
+}

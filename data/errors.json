@@ -1,0 +1,1142 @@
+[
+  {
+    "name": "NullReferenceException",
+    "language": "C#",
+    "keywords": [
+      "NullReferenceException",
+      "Object reference not set"
+    ],
+    "explanation": "Your program tried to use an object that has no value (null).",
+    "cause": "The object was never created or was set to null before being used.",
+    "solution": [
+      "Create the object with new before using it.",
+      "Check for null before use: if (user != null).",
+      "Use the null-conditional operator: user?.Name."
+    ],
+    "example": "if (user != null) { Console.WriteLine(user.Name); }",
+    "beginner": "A variable is like a box. Your program tried to open the box, but nothing is inside yet."
+  },
+  {
+    "name": "IndexOutOfRangeException",
+    "language": "C#",
+    "keywords": [
+      "IndexOutOfRangeException",
+      "Index was outside the bounds of the array"
+    ],
+    "explanation": "You asked for an array position that does not exist.",
+    "cause": "The index is negative or is >= the array length. Arrays start at 0.",
+    "solution": [
+      "Check array.Length before accessing.",
+      "Loop with i < array.Length, not <=."
+    ],
+    "example": "for (int i = 0; i < arr.Length; i++) { ... }",
+    "beginner": "If a shelf has 3 slots (0,1,2), asking for slot 3 finds nothing."
+  },
+  {
+    "name": "InvalidOperationException",
+    "language": "C#",
+    "keywords": [
+      "InvalidOperationException",
+      "Sequence contains no elements",
+      "Collection was modified"
+    ],
+    "explanation": "An operation was not allowed in the object's current state.",
+    "cause": "Common causes: First() on an empty list, or changing a collection while looping over it.",
+    "solution": [
+      "Use FirstOrDefault() and check the result.",
+      "Do not add/remove items inside foreach; loop over a copy (ToList())."
+    ],
+    "example": "var item = list.FirstOrDefault(); if (item != null) { ... }",
+    "beginner": "It's like pressing 'play' on an empty playlist: the action is valid, but not right now."
+  },
+  {
+    "name": "FormatException",
+    "language": "C#",
+    "keywords": [
+      "FormatException",
+      "Input string was not in a correct format"
+    ],
+    "explanation": "Text could not be converted to the requested type.",
+    "cause": "Something like int.Parse(\"abc\") was used on text that is not a valid number.",
+    "solution": [
+      "Use int.TryParse and check the result.",
+      "Trim and validate user input first."
+    ],
+    "example": "if (int.TryParse(input, out int n)) { ... }",
+    "beginner": "You asked the program to read the word 'apple' as a number."
+  },
+  {
+    "name": "NullPointerException",
+    "language": "Java",
+    "keywords": [
+      "NullPointerException"
+    ],
+    "explanation": "Your code used a reference that points to nothing (null).",
+    "cause": "The object was not initialized, or a method returned null.",
+    "solution": [
+      "Initialize the object before use.",
+      "Check obj != null first.",
+      "Use Optional for values that may be missing."
+    ],
+    "example": "if (name != null) { System.out.println(name.length()); }",
+    "beginner": "A phone number written on paper that is blank: there is nobody to call."
+  },
+  {
+    "name": "ArrayIndexOutOfBoundsException",
+    "language": "Java",
+    "keywords": [
+      "ArrayIndexOutOfBoundsException"
+    ],
+    "explanation": "You used an array position outside the array size.",
+    "cause": "The index is negative or >= array.length.",
+    "solution": [
+      "Loop with i < arr.length.",
+      "Print the index and length to debug."
+    ],
+    "example": "for (int i = 0; i < arr.length; i++) { ... }",
+    "beginner": "Asking for seat 10 in a room with only 5 seats."
+  },
+  {
+    "name": "ClassCastException",
+    "language": "Java",
+    "keywords": [
+      "ClassCastException"
+    ],
+    "explanation": "An object was cast to a type it is not.",
+    "cause": "The object's real type is different from the type you cast it to.",
+    "solution": [
+      "Check with instanceof before casting.",
+      "Use generics to avoid casts."
+    ],
+    "example": "if (obj instanceof String) { String s = (String) obj; }",
+    "beginner": "Trying to treat a cat as if it were a dog."
+  },
+  {
+    "name": "TypeError: Cannot read properties of undefined",
+    "language": "JavaScript",
+    "keywords": [
+      "Cannot read properties of undefined",
+      "Cannot read property",
+      "of undefined (reading"
+    ],
+    "explanation": "You tried to read a property from a value that is undefined.",
+    "cause": "The variable was never assigned, an API/array item is missing, or a name is misspelled.",
+    "solution": [
+      "Log the variable to see what it holds.",
+      "Check it exists first: if (user) { ... }.",
+      "Use optional chaining: user?.name."
+    ],
+    "example": "const name = user?.name ?? 'Guest';",
+    "beginner": "You asked an empty box for what is inside it."
+  },
+  {
+    "name": "ReferenceError",
+    "language": "JavaScript",
+    "keywords": [
+      "ReferenceError",
+      "is not defined"
+    ],
+    "explanation": "You used a variable or function that does not exist in this scope.",
+    "cause": "Typo in the name, missing declaration (let/const), or it is out of scope.",
+    "solution": [
+      "Check spelling and capitalization.",
+      "Declare the variable before using it.",
+      "Make sure the script that defines it loads first."
+    ],
+    "example": "let count = 0; console.log(count);",
+    "beginner": "Calling a friend whose name isn't in your phone."
+  },
+  {
+    "name": "SyntaxError",
+    "language": "JavaScript",
+    "keywords": [
+      "SyntaxError",
+      "Unexpected token",
+      "Unexpected end of input",
+      "Invalid or unexpected token"
+    ],
+    "explanation": "The code is not written in valid JavaScript.",
+    "cause": "A missing bracket, quote, comma, or parenthesis.",
+    "solution": [
+      "Look at the line number in the error and the line above.",
+      "Check every ( { [ and quote is closed.",
+      "Use an editor with bracket matching."
+    ],
+    "example": "function hi() {\n  console.log('hi');\n}",
+    "beginner": "It's a sentence with grammar the computer can't read."
+  },
+  {
+    "name": "TypeError: is not a function",
+    "language": "JavaScript",
+    "keywords": [
+      "is not a function"
+    ],
+    "explanation": "You tried to call something that is not a function.",
+    "cause": "Wrong method name, or the value is another type (e.g. calling map on an object).",
+    "solution": [
+      "Check the spelling of the method.",
+      "Log typeof value.",
+      "Confirm it is the type you expect (array vs object)."
+    ],
+    "example": "console.log(typeof items); items.map(x => x);",
+    "beginner": "Trying to 'drive' a bicycle: the name is right but the thing is wrong."
+  },
+  {
+    "name": "NameError",
+    "language": "Python",
+    "keywords": [
+      "NameError",
+      "is not defined"
+    ],
+    "explanation": "Python found a name it does not know.",
+    "cause": "Typo, or the variable was used before it was created.",
+    "solution": [
+      "Check spelling and capitalization.",
+      "Assign the variable before using it.",
+      "Import the module you need."
+    ],
+    "example": "count = 0\nprint(count)",
+    "beginner": "Using a nickname before telling anyone who it belongs to."
+  },
+  {
+    "name": "TypeError",
+    "language": "Python",
+    "keywords": [
+      "TypeError",
+      "unsupported operand",
+      "can only concatenate"
+    ],
+    "explanation": "An operation used values of the wrong type.",
+    "cause": "For example adding a string and a number: 'Age: ' + 5.",
+    "solution": [
+      "Convert with str(), int() or float().",
+      "Use an f-string: f'Age: {age}'."
+    ],
+    "example": "age = 5\nprint(f'Age: {age}')",
+    "beginner": "You can't add apples and the word 'banana'."
+  },
+  {
+    "name": "IndexError",
+    "language": "Python",
+    "keywords": [
+      "IndexError",
+      "list index out of range"
+    ],
+    "explanation": "You asked for a list position that does not exist.",
+    "cause": "The index is >= len(list) or the list is empty.",
+    "solution": [
+      "Check len(my_list) first.",
+      "Loop with for item in my_list."
+    ],
+    "example": "if len(items) > 2:\n    print(items[2])",
+    "beginner": "A 3-item list has positions 0-2; position 3 does not exist."
+  },
+  {
+    "name": "KeyError",
+    "language": "Python",
+    "keywords": [
+      "KeyError"
+    ],
+    "explanation": "You looked up a dictionary key that is not there.",
+    "cause": "The key is misspelled or was never added.",
+    "solution": [
+      "Use my_dict.get('key').",
+      "Check with: if 'key' in my_dict."
+    ],
+    "example": "value = data.get('name', 'unknown')",
+    "beginner": "Looking up a word in a dictionary that has no such entry."
+  },
+  {
+    "name": "AttributeError",
+    "language": "Python",
+    "keywords": [
+      "AttributeError",
+      "has no attribute"
+    ],
+    "explanation": "You used an attribute or method the object does not have.",
+    "cause": "Wrong name, wrong type, or the value is None.",
+    "solution": [
+      "Check spelling.",
+      "Print type(obj) and dir(obj).",
+      "If it is None, find why the value was not set."
+    ],
+    "example": "print(type(obj)); print(dir(obj))",
+    "beginner": "Asking a toaster to play music."
+  },
+  {
+    "name": "SyntaxError",
+    "language": "Python",
+    "keywords": [
+      "SyntaxError: invalid syntax",
+      "expected ':'",
+      "unterminated string",
+      "was never closed"
+    ],
+    "explanation": "Python cannot read the line as valid code.",
+    "cause": "Missing colon, quote or bracket, or wrong keyword.",
+    "solution": [
+      "Check the reported line and the one above.",
+      "Add : after if/for/def/class lines.",
+      "Match all quotes and brackets."
+    ],
+    "example": "if x > 3:\n    print(x)",
+    "beginner": "Like a sentence missing punctuation."
+  },
+  {
+    "name": "IndentationError",
+    "language": "Python",
+    "keywords": [
+      "IndentationError",
+      "unexpected indent",
+      "expected an indented block"
+    ],
+    "explanation": "Python's spacing at the start of a line is wrong.",
+    "cause": "Mixed tabs/spaces or a block with no indented body.",
+    "solution": [
+      "Use 4 spaces for each level.",
+      "Do not mix tabs and spaces."
+    ],
+    "example": "def hi():\n    print('hi')",
+    "beginner": "Python uses spacing to know which lines belong together."
+  },
+  {
+    "name": "SQL syntax error",
+    "language": "SQL",
+    "keywords": [
+      "syntax error",
+      "Incorrect syntax near",
+      "You have an error in your SQL syntax"
+    ],
+    "explanation": "The database could not understand your SQL statement.",
+    "cause": "A missing comma, keyword, quote, or misplaced clause.",
+    "solution": [
+      "Look at the text after 'near' in the message.",
+      "Check commas between columns.",
+      "Keep order: SELECT, FROM, WHERE, GROUP BY, ORDER BY."
+    ],
+    "example": "SELECT id, name FROM users WHERE active = 1;",
+    "beginner": "Like giving a librarian a request in the wrong word order."
+  },
+  {
+    "name": "Invalid object name",
+    "language": "SQL",
+    "keywords": [
+      "Invalid object name",
+      "Table doesn't exist",
+      "no such table",
+      "relation does not exist"
+    ],
+    "explanation": "The table or view you named was not found.",
+    "cause": "Typo, wrong database/schema, or the table was never created.",
+    "solution": [
+      "Check the table name spelling.",
+      "Confirm the right database is selected.",
+      "Use the schema: dbo.Users."
+    ],
+    "example": "SELECT * FROM dbo.Users;",
+    "beginner": "Asking for a file in a folder that doesn't exist."
+  },
+  {
+    "name": "Column not found",
+    "language": "SQL",
+    "keywords": [
+      "Invalid column name",
+      "Unknown column",
+      "no such column",
+      "column does not exist"
+    ],
+    "explanation": "A column in your query does not exist in that table.",
+    "cause": "Typo, or the column is in another table.",
+    "solution": [
+      "Check the table's columns.",
+      "Check alias names."
+    ],
+    "example": "SELECT name FROM users;",
+    "beginner": "Asking for a page number that isn't in the book."
+  },
+  {
+    "name": "Duplicate key",
+    "language": "SQL",
+    "keywords": [
+      "Duplicate entry",
+      "duplicate key",
+      "UNIQUE KEY constraint",
+      "PRIMARY KEY constraint"
+    ],
+    "explanation": "You tried to insert a value that must be unique but already exists.",
+    "cause": "A row with the same primary/unique key is already there.",
+    "solution": [
+      "SELECT first to see if it exists.",
+      "Use UPDATE for existing rows.",
+      "Let the database auto-generate IDs."
+    ],
+    "example": "SELECT 1 FROM users WHERE email = 'a@b.com';",
+    "beginner": "Two students can't have the same student number."
+  },
+  {
+    "name": "Missing closing tag",
+    "language": "HTML",
+    "keywords": [
+      "missing closing tag",
+      "unclosed tag",
+      "Unclosed element",
+      "end tag"
+    ],
+    "explanation": "An HTML element was opened but never closed.",
+    "cause": "A <div>, <p> or similar has no matching closing tag.",
+    "solution": [
+      "Match each opening tag with </tag>.",
+      "Indent nested elements.",
+      "Use an HTML validator."
+    ],
+    "example": "<div>\n  <p>Hello</p>\n</div>",
+    "beginner": "Like opening a bracket in a sentence and never closing it."
+  },
+  {
+    "name": "CSS syntax error",
+    "language": "CSS",
+    "keywords": [
+      "CSS syntax",
+      "Unexpected token }",
+      "Expected ':'",
+      "missing semicolon",
+      "Unknown property"
+    ],
+    "explanation": "The browser could not read a CSS rule.",
+    "cause": "A missing semicolon, colon or brace, or a misspelled property.",
+    "solution": [
+      "Every declaration ends with ;.",
+      "Match all { and }.",
+      "Check property spelling (background-color)."
+    ],
+    "example": "button {\n  color: white;\n  background-color: #0af;\n}",
+    "beginner": "The browser skips lines it can't read."
+  },
+  {
+    "name": "Invalid selector",
+    "language": "CSS",
+    "keywords": [
+      "Invalid selector",
+      "is not a valid selector",
+      "not a valid selector"
+    ],
+    "explanation": "The selector you wrote is not valid CSS.",
+    "cause": "Wrong symbols, e.g. missing . for a class or # for an id.",
+    "solution": [
+      "Classes use . and ids use #.",
+      "Do not start a class name with a digit."
+    ],
+    "example": "querySelector('.card')",
+    "beginner": "A selector is an address; a wrong address finds no house."
+  },
+  {
+    "name": "Too many re-renders",
+    "language": "React",
+    "keywords": [
+      "Too many re-renders",
+      "Maximum update depth exceeded"
+    ],
+    "explanation": "React kept re-rendering in an endless loop.",
+    "cause": "State is set during render, or an event handler is written like onClick={setX(1)} so it runs immediately.",
+    "solution": [
+      "Pass a function to handlers: onClick={() => setCount(1)}.",
+      "Never call setState directly in the component body.",
+      "Put updates in useEffect with the right dependency array."
+    ],
+    "example": "<button onClick={() => setCount(count + 1)}>+</button>",
+    "beginner": "Like a light switch that flips itself on and off forever."
+  },
+  {
+    "name": "Invalid hook call",
+    "language": "React",
+    "keywords": [
+      "Invalid hook call",
+      "Hooks can only be called inside"
+    ],
+    "explanation": "A React Hook was used somewhere React does not allow.",
+    "cause": "The hook is inside a loop, condition or normal function, or there are two copies of React installed.",
+    "solution": [
+      "Call hooks only at the top level of a component or custom hook.",
+      "Custom hooks must start with 'use'.",
+      "Run npm ls react to look for duplicate copies."
+    ],
+    "example": "function App() {\n  const [n, setN] = useState(0);\n  return <p>{n}</p>;\n}",
+    "beginner": "Hooks are reserved seats: they must be requested in the same order every time."
+  },
+  {
+    "name": "Missing key prop",
+    "language": "React",
+    "keywords": [
+      "unique \"key\" prop",
+      "Each child in a list should have a unique"
+    ],
+    "explanation": "React needs a unique key on every item in a list.",
+    "cause": "A list was rendered with .map() without a key.",
+    "solution": [
+      "Add key={item.id} to the outermost element inside map.",
+      "Use a stable id; avoid the array index if the list can change."
+    ],
+    "example": "{items.map(i => <li key={i.id}>{i.name}</li>)}",
+    "beginner": "Name tags at a party help React know who is who."
+  },
+  {
+    "name": "Objects are not valid as a React child",
+    "language": "React",
+    "keywords": [
+      "Objects are not valid as a React child"
+    ],
+    "explanation": "You tried to display a whole object inside JSX.",
+    "cause": "Something like {user} where user is an object.",
+    "solution": [
+      "Render a property: {user.name}.",
+      "Use .map() to render arrays of objects.",
+      "Use JSON.stringify(obj) only for debugging."
+    ],
+    "example": "<p>{user.name}</p>",
+    "beginner": "Trying to print a filing cabinet on one line; pick one folder."
+  },
+  {
+    "name": "Hydration failed",
+    "language": "React",
+    "keywords": [
+      "Hydration failed",
+      "did not match the server-rendered",
+      "Text content does not match server-rendered"
+    ],
+    "explanation": "The HTML from the server differs from what the browser rendered.",
+    "cause": "Date.now(), Math.random(), window or localStorage used during the first render, or invalid HTML nesting.",
+    "solution": [
+      "Move browser-only code into useEffect.",
+      "Avoid random or time values in the first render.",
+      "Check nesting such as <p> inside <p>."
+    ],
+    "example": "useEffect(() => { setWidth(window.innerWidth); }, []);",
+    "beginner": "Two people describing the same room differently."
+  },
+  {
+    "name": "Adjacent JSX elements",
+    "language": "React",
+    "keywords": [
+      "Adjacent JSX elements must be wrapped"
+    ],
+    "explanation": "A component can return only one root element.",
+    "cause": "Two sibling elements are returned without a wrapper.",
+    "solution": [
+      "Wrap them in a <div>.",
+      "Or use a fragment: <> ... </>."
+    ],
+    "example": "return (\n  <>\n    <h1>Title</h1>\n    <p>Text</p>\n  </>\n);",
+    "beginner": "A parcel must be sent in one box."
+  },
+  {
+    "name": "TS2322 Type not assignable",
+    "language": "TypeScript",
+    "keywords": [
+      "is not assignable to type",
+      "TS2322"
+    ],
+    "explanation": "You put a value of one type where another type is expected.",
+    "cause": "For example a string assigned to a number variable.",
+    "solution": [
+      "Check the declared type.",
+      "Convert the value (Number(x)).",
+      "Or widen the type: string ",
+      " number."
+    ],
+    "example": "let age: number = Number('20');",
+    "beginner": "Putting a square peg in a round hole."
+  },
+  {
+    "name": "TS2339 Property does not exist",
+    "language": "TypeScript",
+    "keywords": [
+      "does not exist on type",
+      "TS2339"
+    ],
+    "explanation": "You used a property that TypeScript doesn't know is on that type.",
+    "cause": "Typo, or the type or interface is missing that property.",
+    "solution": [
+      "Check the spelling.",
+      "Add the property to the interface.",
+      "Narrow the type first (if ('name' in obj))."
+    ],
+    "example": "interface User { name: string; age: number }",
+    "beginner": "Asking a book for its battery level."
+  },
+  {
+    "name": "TS7006 Implicit any",
+    "language": "TypeScript",
+    "keywords": [
+      "implicitly has an 'any' type",
+      "TS7006",
+      "TS7031"
+    ],
+    "explanation": "TypeScript can't work out a type and strict mode forbids 'any'.",
+    "cause": "A parameter or variable has no type.",
+    "solution": [
+      "Add a type: (x: number).",
+      "Give the variable an initial value."
+    ],
+    "example": "function double(x: number) { return x * 2; }",
+    "beginner": "A label is missing on a box, and the rules say every box needs one."
+  },
+  {
+    "name": "TS2345 Argument type",
+    "language": "TypeScript",
+    "keywords": [
+      "Argument of type",
+      "TS2345"
+    ],
+    "explanation": "A function received an argument of the wrong type.",
+    "cause": "The value passed doesn't match the parameter type.",
+    "solution": [
+      "Check the function signature.",
+      "Convert or fix the value you pass."
+    ],
+    "example": "greet(String(id));",
+    "beginner": "Handing a ticket to a machine that only accepts coins."
+  },
+  {
+    "name": "Object is possibly undefined",
+    "language": "TypeScript",
+    "keywords": [
+      "is possibly 'undefined'",
+      "is possibly 'null'",
+      "TS2532",
+      "TS18048"
+    ],
+    "explanation": "The value may be missing, and you used it without checking.",
+    "cause": "Strict null checks are on.",
+    "solution": [
+      "Check first: if (user) { ... }.",
+      "Use optional chaining: user?.name."
+    ],
+    "example": "const name = user?.name ?? 'Guest';",
+    "beginner": "Opening a box that might be empty."
+  },
+  {
+    "name": "Unhandled promise rejection",
+    "language": "JavaScript",
+    "keywords": [
+      "Uncaught (in promise)",
+      "UnhandledPromiseRejection"
+    ],
+    "explanation": "A promise failed and nothing handled the failure.",
+    "cause": "A fetch or async call threw an error and there is no catch.",
+    "solution": [
+      "Add .catch(...) or try/catch around await.",
+      "Check the network tab for the real error."
+    ],
+    "example": "try {\n  const r = await fetch(url);\n} catch (err) {\n  console.error(err);\n}",
+    "beginner": "Ordering food and nobody answers the phone when it fails."
+  },
+  {
+    "name": "CORS error",
+    "language": "JavaScript",
+    "keywords": [
+      "CORS",
+      "Access-Control-Allow-Origin"
+    ],
+    "explanation": "The browser blocked a request to another website.",
+    "cause": "The server didn't say your site is allowed to call it.",
+    "solution": [
+      "Enable CORS on the server for your origin.",
+      "Call your own backend, which calls the other API.",
+      "Check the URL and protocol."
+    ],
+    "example": "res.setHeader('Access-Control-Allow-Origin', 'https://mysite.com');",
+    "beginner": "A building's security guard not on the guest list."
+  },
+  {
+    "name": "JSON parse error",
+    "language": "JavaScript",
+    "keywords": [
+      "Unexpected token < in JSON",
+      "is not valid JSON",
+      "JSON.parse",
+      "Unexpected end of JSON"
+    ],
+    "explanation": "JSON.parse was given text that isn't valid JSON.",
+    "cause": "Often the server returned an HTML error page or empty text.",
+    "solution": [
+      "Log the raw response text first.",
+      "Check the URL and status code.",
+      "Validate the JSON."
+    ],
+    "example": "const text = await res.text(); console.log(text);",
+    "beginner": "Reading a letter in a language you don't speak."
+  },
+  {
+    "name": "Assignment to constant variable",
+    "language": "JavaScript",
+    "keywords": [
+      "Assignment to constant variable"
+    ],
+    "explanation": "You tried to change a const variable.",
+    "cause": "const variables can't be reassigned.",
+    "solution": [
+      "Use let if the value changes.",
+      "Or change a property (allowed on const objects)."
+    ],
+    "example": "let count = 0; count = 1;",
+    "beginner": "A label glued to a jar that can't be moved."
+  },
+  {
+    "name": "Maximum call stack size exceeded",
+    "language": "JavaScript",
+    "keywords": [
+      "Maximum call stack size exceeded"
+    ],
+    "explanation": "A function called itself too many times.",
+    "cause": "Recursion without a stopping condition.",
+    "solution": [
+      "Add a base case that returns.",
+      "Make sure each call moves toward it."
+    ],
+    "example": "function f(n) { if (n <= 0) return; f(n - 1); }",
+    "beginner": "Mirrors facing each other: it never ends."
+  },
+  {
+    "name": "ModuleNotFoundError",
+    "language": "Python",
+    "keywords": [
+      "ModuleNotFoundError",
+      "No module named"
+    ],
+    "explanation": "Python can't find the module you imported.",
+    "cause": "It isn't installed, the name is wrong, or the wrong environment is active.",
+    "solution": [
+      "Install it: pip install <name>.",
+      "Check the spelling.",
+      "Activate the right virtual environment."
+    ],
+    "example": "pip install requests",
+    "beginner": "Looking for a book the library doesn't have."
+  },
+  {
+    "name": "ZeroDivisionError",
+    "language": "Python",
+    "keywords": [
+      "ZeroDivisionError",
+      "division by zero"
+    ],
+    "explanation": "You divided a number by zero.",
+    "cause": "The divisor was 0.",
+    "solution": [
+      "Check the divisor before dividing.",
+      "Handle it with try/except."
+    ],
+    "example": "if b != 0:\n    print(a / b)",
+    "beginner": "Sharing pizza among zero people."
+  },
+  {
+    "name": "ValueError",
+    "language": "Python",
+    "keywords": [
+      "ValueError",
+      "invalid literal for int()"
+    ],
+    "explanation": "The value has the right type but an unusable content.",
+    "cause": "For example int('abc').",
+    "solution": [
+      "Validate input first.",
+      "Wrap it in try/except ValueError."
+    ],
+    "example": "try:\n    n = int(text)\nexcept ValueError:\n    print('Enter a number')",
+    "beginner": "Asking for 'blue' when you needed a number."
+  },
+  {
+    "name": "OutOfMemoryError",
+    "language": "Java",
+    "keywords": [
+      "OutOfMemoryError",
+      "Java heap space"
+    ],
+    "explanation": "Java ran out of memory.",
+    "cause": "Too much data loaded at once, or objects never released.",
+    "solution": [
+      "Load data in smaller pieces.",
+      "Look for lists that keep growing.",
+      "Increase heap with -Xmx if needed."
+    ],
+    "example": "java -Xmx2g MyApp",
+    "beginner": "Pouring a bucket into a cup."
+  },
+  {
+    "name": "Cannot find symbol",
+    "language": "Java",
+    "keywords": [
+      "cannot find symbol"
+    ],
+    "explanation": "The compiler doesn't know a name you used.",
+    "cause": "Typo, missing import or missing declaration.",
+    "solution": [
+      "Check spelling and capitalization.",
+      "Add the import.",
+      "Declare the variable first."
+    ],
+    "example": "import java.util.List;",
+    "beginner": "Using a word that isn't in the dictionary."
+  },
+  {
+    "name": "StackOverflowError",
+    "language": "Java",
+    "keywords": [
+      "StackOverflowError"
+    ],
+    "explanation": "Method calls piled up until the stack was full.",
+    "cause": "Recursion without an end condition.",
+    "solution": [
+      "Add a base case.",
+      "Or use a loop."
+    ],
+    "example": "int f(int n) { return n <= 1 ? 1 : n * f(n - 1); }",
+    "beginner": "An endless chain of 'ask the next person'."
+  },
+  {
+    "name": "Undefined variable",
+    "language": "PHP",
+    "keywords": [
+      "Undefined variable",
+      "Warning: Undefined"
+    ],
+    "explanation": "You used a PHP variable that was never set.",
+    "cause": "Typo, or the variable is defined in another scope.",
+    "solution": [
+      "Assign it before use.",
+      "Check $ and spelling.",
+      "Use isset($x) or ??."
+    ],
+    "example": "$name = $_GET['name'] ?? 'Guest';",
+    "beginner": "Using an unlabelled jar."
+  },
+  {
+    "name": "Call to undefined function",
+    "language": "PHP",
+    "keywords": [
+      "Call to undefined function"
+    ],
+    "explanation": "PHP can't find the function you called.",
+    "cause": "Typo, missing extension, or file not included.",
+    "solution": [
+      "Check the spelling.",
+      "Include the file that defines it.",
+      "Enable the needed PHP extension."
+    ],
+    "example": "require 'helpers.php';",
+    "beginner": "Calling a phone number that doesn't exist."
+  },
+  {
+    "name": "Parse error",
+    "language": "PHP",
+    "keywords": [
+      "Parse error: syntax error",
+      "PHP Parse error"
+    ],
+    "explanation": "PHP can't read the syntax.",
+    "cause": "Missing semicolon, bracket or quote.",
+    "solution": [
+      "Check the line reported and the one before.",
+      "End each statement with ;."
+    ],
+    "example": "echo 'Hello';",
+    "beginner": "A sentence missing punctuation."
+  },
+  {
+    "name": "Declared and not used",
+    "language": "Go",
+    "keywords": [
+      "declared and not used",
+      "declared but not used",
+      "imported and not used"
+    ],
+    "explanation": "Go doesn't allow unused variables or imports.",
+    "cause": "A variable or import is never used.",
+    "solution": [
+      "Use it or delete it.",
+      "Use _ to ignore a value on purpose."
+    ],
+    "example": "_, err := doWork()",
+    "beginner": "A strict teacher who won't accept unused supplies."
+  },
+  {
+    "name": "Nil pointer dereference",
+    "language": "Go",
+    "keywords": [
+      "nil pointer dereference",
+      "invalid memory address"
+    ],
+    "explanation": "You used a pointer that points to nothing.",
+    "cause": "The pointer was never set.",
+    "solution": [
+      "Check if p != nil before use.",
+      "Initialize structs and pointers."
+    ],
+    "example": "if p != nil { fmt.Println(p.Name) }",
+    "beginner": "A signpost that points nowhere."
+  },
+  {
+    "name": "Borrow of moved value",
+    "language": "Rust",
+    "keywords": [
+      "borrow of moved value",
+      "use of moved value",
+      "E0382"
+    ],
+    "explanation": "You used a value after it was moved to something else.",
+    "cause": "Rust allows only one owner of a value at a time.",
+    "solution": [
+      "Pass a reference: &value.",
+      "Or clone it: value.clone()."
+    ],
+    "example": "let s2 = s1.clone();\nprintln!(\"{}\", s1);",
+    "beginner": "Giving away your book, then trying to read it."
+  },
+  {
+    "name": "Cannot borrow as mutable",
+    "language": "Rust",
+    "keywords": [
+      "cannot borrow",
+      "E0502",
+      "E0596"
+    ],
+    "explanation": "Rust stopped a change that could cause a conflict.",
+    "cause": "The variable isn't declared mut, or it is already borrowed.",
+    "solution": [
+      "Declare it: let mut x.",
+      "Finish using earlier references first."
+    ],
+    "example": "let mut v = vec![1];\nv.push(2);",
+    "beginner": "Two people editing one page at once."
+  },
+  {
+    "name": "Mismatched types",
+    "language": "Rust",
+    "keywords": [
+      "mismatched types",
+      "E0308"
+    ],
+    "explanation": "The value type differs from the expected type.",
+    "cause": "For example an i32 given where a String is needed.",
+    "solution": [
+      "Convert with .to_string() or as.",
+      "Check the function signature."
+    ],
+    "example": "let n: i32 = \"5\".parse().unwrap();",
+    "beginner": "Fitting the wrong plug into a socket."
+  },
+  {
+    "name": "Segmentation fault",
+    "language": "C/C++",
+    "keywords": [
+      "Segmentation fault",
+      "SIGSEGV",
+      "core dumped"
+    ],
+    "explanation": "The program touched memory it isn't allowed to use.",
+    "cause": "A null or invalid pointer, or reading past an array's end.",
+    "solution": [
+      "Check pointers for NULL.",
+      "Verify array bounds.",
+      "Run with a debugger or -fsanitize=address."
+    ],
+    "example": "if (ptr != NULL) { printf(\"%d\", *ptr); }",
+    "beginner": "Walking into a room you don't have a key for."
+  },
+  {
+    "name": "Undefined reference",
+    "language": "C/C++",
+    "keywords": [
+      "undefined reference to",
+      "unresolved external symbol"
+    ],
+    "explanation": "The linker can't find a function's code.",
+    "cause": "The function is declared but its file or library isn't linked.",
+    "solution": [
+      "Compile all source files together.",
+      "Add the library with -l."
+    ],
+    "example": "gcc main.c util.c -o app",
+    "beginner": "A table of contents entry with no chapter."
+  },
+  {
+    "name": "Not declared in this scope",
+    "language": "C/C++",
+    "keywords": [
+      "was not declared in this scope",
+      "implicit declaration of function"
+    ],
+    "explanation": "You used a name the compiler hasn't seen yet.",
+    "cause": "Missing #include, typo, or declared later.",
+    "solution": [
+      "Add the right #include.",
+      "Declare before using."
+    ],
+    "example": "#include <stdio.h>",
+    "beginner": "Using a word before defining it."
+  },
+  {
+    "name": "NoMethodError",
+    "language": "Ruby",
+    "keywords": [
+      "NoMethodError",
+      "undefined method"
+    ],
+    "explanation": "You called a method the object doesn't have.",
+    "cause": "Often the object is nil or a different type.",
+    "solution": [
+      "Print the object: p obj.",
+      "Check for nil: obj&.method."
+    ],
+    "example": "name = user&.name",
+    "beginner": "Asking a nil (nothing) to speak."
+  },
+  {
+    "name": "Undefined local variable",
+    "language": "Ruby",
+    "keywords": [
+      "undefined local variable or method"
+    ],
+    "explanation": "Ruby doesn't know that name.",
+    "cause": "Typo or variable not set in this scope.",
+    "solution": [
+      "Assign it first.",
+      "Check spelling."
+    ],
+    "example": "count = 0\nputs count",
+    "beginner": "A nickname nobody has heard."
+  },
+  {
+    "name": "Cannot find module",
+    "language": "Node.js",
+    "keywords": [
+      "Cannot find module",
+      "MODULE_NOT_FOUND"
+    ],
+    "explanation": "Node can't find a package or file you require or import.",
+    "cause": "Not installed, or the path is wrong.",
+    "solution": [
+      "Run npm install.",
+      "Check the path (./ for local files).",
+      "Check package.json."
+    ],
+    "example": "npm install express",
+    "beginner": "A missing ingredient in the pantry."
+  },
+  {
+    "name": "EADDRINUSE",
+    "language": "Node.js",
+    "keywords": [
+      "EADDRINUSE",
+      "address already in use"
+    ],
+    "explanation": "The port you want is already taken.",
+    "cause": "Another process or an earlier server run uses that port.",
+    "solution": [
+      "Stop the other process.",
+      "Use a different port."
+    ],
+    "example": "app.listen(3001)",
+    "beginner": "Two cars trying to park in the same spot."
+  },
+  {
+    "name": "ENOENT",
+    "language": "Node.js",
+    "keywords": [
+      "ENOENT",
+      "no such file or directory"
+    ],
+    "explanation": "A file or folder doesn't exist at that path.",
+    "cause": "Wrong path or the file wasn't created.",
+    "solution": [
+      "Check the path and spelling.",
+      "Use path.join(__dirname, 'file')."
+    ],
+    "example": "fs.existsSync('data.json')",
+    "beginner": "Looking for a page in the wrong book."
+  },
+  {
+    "name": "npm ERESOLVE",
+    "language": "Node.js",
+    "keywords": [
+      "ERESOLVE",
+      "unable to resolve dependency tree"
+    ],
+    "explanation": "npm found packages with conflicting versions.",
+    "cause": "Two packages need incompatible versions of a dependency.",
+    "solution": [
+      "Read which versions conflict.",
+      "Update the packages.",
+      "As a last resort: npm install --legacy-peer-deps."
+    ],
+    "example": "npm install --legacy-peer-deps",
+    "beginner": "Two recipes needing different oven temperatures."
+  },
+  {
+    "name": "Not a git repository",
+    "language": "Git",
+    "keywords": [
+      "not a git repository"
+    ],
+    "explanation": "Git commands ran in a folder that isn't a repo.",
+    "cause": "No git init was done, or you're in the wrong folder.",
+    "solution": [
+      "cd into your project folder.",
+      "Run git init to start tracking."
+    ],
+    "example": "git init",
+    "beginner": "Asking for a save file in a game you haven't started."
+  },
+  {
+    "name": "Merge conflict",
+    "language": "Git",
+    "keywords": [
+      "CONFLICT (content)",
+      "Automatic merge failed",
+      "merge conflict"
+    ],
+    "explanation": "Git couldn't combine two sets of changes.",
+    "cause": "The same lines were edited in both branches.",
+    "solution": [
+      "Open the conflicted files.",
+      "Choose between <<<<<<< and >>>>>>>.",
+      "Then git add and git commit."
+    ],
+    "example": "git add file.txt\ngit commit",
+    "beginner": "Two editors rewrote the same sentence."
+  },
+  {
+    "name": "Push rejected",
+    "language": "Git",
+    "keywords": [
+      "non-fast-forward",
+      "failed to push some refs",
+      "fetch first"
+    ],
+    "explanation": "The remote has commits you don't have.",
+    "cause": "Someone pushed before you.",
+    "solution": [
+      "Run git pull --rebase.",
+      "Fix any conflicts.",
+      "Push again."
+    ],
+    "example": "git pull --rebase\ngit push",
+    "beginner": "Someone updated the shared doc first."
+  },
+  {
+    "name": "Permission denied (publickey)",
+    "language": "Git",
+    "keywords": [
+      "Permission denied (publickey)",
+      "Authentication failed"
+    ],
+    "explanation": "GitHub doesn't accept your credentials.",
+    "cause": "No SSH key is set up, or the wrong token or password is used.",
+    "solution": [
+      "Add your SSH key to GitHub.",
+      "Or use HTTPS with a personal access token."
+    ],
+    "example": "ssh -T git@github.com",
+    "beginner": "A door that doesn't recognize your key."
+  }
+]

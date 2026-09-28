@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Variables",
+    "what": "A named place to store a value.",
+    "why": "Programs need to remember data like names and scores.",
+    "example": "let age = 20;\nage = 21;",
+    "real": "A labelled jar in a kitchen: you can change what's inside.",
+    "mistake": "Using a variable before giving it a value.",
+    "exercise": "Create variables for your name and your age, then print them."
+  },
+  {
+    "name": "Functions",
+    "what": "A reusable block of code that does one job.",
+    "why": "They avoid repeating code and keep programs tidy.",
+    "example": "function add(a, b) { return a + b; }\nadd(2, 3);",
+    "real": "A recipe: same steps each time, with different ingredients.",
+    "mistake": "Forgetting to return a value or to call the function.",
+    "exercise": "Write a function that returns the square of a number."
+  },
+  {
+    "name": "Classes",
+    "what": "A blueprint for creating objects.",
+    "why": "They group data and behavior together.",
+    "example": "class Dog {\n  constructor(name) { this.name = name; }\n  bark() { return this.name + ' barks'; }\n}",
+    "real": "A house plan used to build many houses.",
+    "mistake": "Forgetting new when creating an object.",
+    "exercise": "Create a Car class with a brand and a start() method."
+  },
+  {
+    "name": "Objects",
+    "what": "A thing that holds related data and actions.",
+    "why": "They model real things like users or products.",
+    "example": "const user = { name: 'Sam', age: 20 };\nuser.name;",
+    "real": "A student card with name, number and course.",
+    "mistake": "Reading a property that doesn't exist (undefined).",
+    "exercise": "Make an object for your favorite book with title and author."
+  },
+  {
+    "name": "Arrays",
+    "what": "An ordered list of values.",
+    "why": "They store many items under one name.",
+    "example": "const fruits = ['apple', 'pear'];\nfruits[0]; // apple",
+    "real": "A shopping list where each line has a number, starting at 0.",
+    "mistake": "Off-by-one mistakes: the last index is length - 1.",
+    "exercise": "Make an array of 3 names and print the second."
+  },
+  {
+    "name": "Loops",
+    "what": "Code that repeats until a condition is met.",
+    "why": "They save you from writing the same thing many times.",
+    "example": "for (let i = 0; i < 3; i++) {\n  console.log(i);\n}",
+    "real": "Washing dishes until the pile is empty.",
+    "mistake": "An endless loop because the condition never becomes false.",
+    "exercise": "Print the numbers 1 to 10 with a loop."
+  },
+  {
+    "name": "Conditions",
+    "what": "Code that chooses what to run depending on a true/false test.",
+    "why": "Programs must react to different situations.",
+    "example": "if (age >= 18) { console.log('adult'); } else { console.log('minor'); }",
+    "real": "If it rains, take an umbrella; otherwise, don't.",
+    "mistake": "Using = (assign) instead of == or === (compare).",
+    "exercise": "Print 'pass' if a mark is 50 or more, otherwise 'fail'."
+  },
+  {
+    "name": "APIs",
+    "what": "A way for programs to talk to each other by requests.",
+    "why": "They let your app use data and features from other services.",
+    "example": "fetch('/api/users').then(r => r.json());",
+    "real": "A waiter carrying your order to the kitchen and bringing food back.",
+    "mistake": "Not handling errors or slow responses.",
+    "exercise": "Describe what request a weather app would make."
+  },
+  {
+    "name": "Databases",
+    "what": "Organized storage for data that persists.",
+    "why": "Apps need to keep data after they close.",
+    "example": "SELECT name FROM students WHERE grade > 60;",
+    "real": "A big filing cabinet with labelled drawers.",
+    "mistake": "Forgetting WHERE in UPDATE or DELETE.",
+    "exercise": "Design a table for books: which columns would you use?"
+  },
+  {
+    "name": "Git",
+    "what": "A tool that tracks changes to your code over time.",
+    "why": "You can undo mistakes and work with others.",
+    "example": "git add .\ngit commit -m \"feat: add login\"\ngit push",
+    "real": "Save points in a video game.",
+    "mistake": "Committing without a clear message, or committing secrets.",
+    "exercise": "Create a repo, make a commit, and view git log."
+  },
+  {
+    "name": "REST APIs",
+    "what": "An API style that uses URLs and HTTP methods (GET, POST, PUT, DELETE).",
+    "why": "It gives a standard, predictable way to build web services.",
+    "example": "GET /users/5\nPOST /users\nDELETE /users/5",
+    "real": "A menu: each item name (URL) plus an action (method).",
+    "mistake": "Using GET to change data.",
+    "exercise": "List the 4 methods for a 'products' resource."
+  },
+  {
+    "name": "MVC",
+    "what": "Model-View-Controller: splits an app into data, display and logic.",
+    "why": "It keeps code organized and easier to change.",
+    "example": "Model: User\nView: profile page\nController: handles the request",
+    "real": "A restaurant: pantry (model), dining room (view), waiter (controller).",
+    "mistake": "Putting database logic inside the view.",
+    "exercise": "Name the M, V and C in a to-do app."
+  },
+  {
+    "name": "OOP",
+    "what": "Object-Oriented Programming: building software from objects with data and behavior.",
+    "why": "It helps reuse code and model real things.",
+    "example": "class Animal { speak() {} }\nclass Cat extends Animal { speak() { return 'meow'; } }",
+    "real": "Vehicles share basics, but a car and a bike differ.",
+    "mistake": "Making inheritance chains too deep.",
+    "exercise": "Create Animal and Dog classes where Dog extends Animal."
+  },
+  {
+    "name": "Exception handling",
+    "what": "Catching errors so the program doesn't crash.",
+    "why": "Users get a friendly message instead of a crash.",
+    "example": "try {\n  JSON.parse(text);\n} catch (err) {\n  console.log('Invalid JSON');\n}",
+    "real": "A safety net under a trapeze.",
+    "mistake": "Catching an error and ignoring it silently.",
+    "exercise": "Wrap a division by zero check in a try/catch."
+  },
+  {
+    "name": "React Components",
+    "what": "A reusable piece of UI written as a function that returns JSX.",
+    "why": "They break a page into small pieces you can reuse.",
+    "example": "function Welcome({ name }) {\n  return <h1>Hello {name}</h1>;\n}",
+    "real": "Lego bricks: the same brick can be used many times.",
+    "mistake": "Naming a component in lowercase (it must start with a capital).",
+    "exercise": "Make a Button component that takes a label prop."
+  },
+  {
+    "name": "Hooks",
+    "what": "Special React functions like useState and useEffect for state and side effects.",
+    "why": "They let function components remember data and react to changes.",
+    "example": "const [count, setCount] = useState(0);",
+    "real": "A notebook the component keeps between renders.",
+    "mistake": "Calling hooks inside conditions or loops.",
+    "exercise": "Build a counter with useState."
+  },
+  {
+    "name": "Async/Await",
+    "what": "A readable way to wait for slow tasks like network requests.",
+    "why": "It makes asynchronous code read like normal steps.",
+    "example": "const res = await fetch(url);\nconst data = await res.json();",
+    "real": "Waiting for your coffee order before sitting down.",
+    "mistake": "Forgetting await, or await outside an async function.",
+    "exercise": "Fetch a URL with async/await and log the result."
+  },
+  {
+    "name": "Promises",
+    "what": "An object that represents a future result (success or failure).",
+    "why": "They handle tasks that finish later.",
+    "example": "fetch(url).then(r => r.json()).catch(console.error);",
+    "real": "A restaurant buzzer: it will ring when the food is ready or the order fails.",
+    "mistake": "Not adding .catch for errors.",
+    "exercise": "Wrap a setTimeout in a Promise."
+  },
+  {
+    "name": "JSON",
+    "what": "A text format for storing and sending data.",
+    "why": "Programs and APIs share data in the same simple format.",
+    "example": "{ \"name\": \"Sam\", \"age\": 20 }",
+    "real": "A standard shipping label everyone can read.",
+    "mistake": "Trailing commas or single quotes (not allowed).",
+    "exercise": "Write JSON for a book with title and author."
+  },
+  {
+    "name": "Recursion",
+    "what": "A function that calls itself to solve smaller versions of a problem.",
+    "why": "It's a natural fit for trees, folders and repeated patterns.",
+    "example": "function fact(n) {\n  return n <= 1 ? 1 : n * fact(n - 1);\n}",
+    "real": "Russian nesting dolls: open one to find a smaller one.",
+    "mistake": "Forgetting the base case, causing endless calls.",
+    "exercise": "Write a recursive function to sum 1 to n."
+  }
+]
